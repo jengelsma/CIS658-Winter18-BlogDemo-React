@@ -78,10 +78,10 @@ class Authors extends React.Component {
   loadAuthors() {
     this.setState({
       authors: [
-        {fname: "sam", lname: "iam", email: "sam@aol.com"},
-        {fname: "jane", lname: "doe", email: "jane@aol.com"},
-        {fname: "fred", lname: "bear", email: "fred@aol.com"},
-        {fname: "ted", lname: "tooy", email: "ted@aol.com"},
+        {id: 1, fname: "sam", lname: "iam", email: "sam@aol.com"},
+        {id: 2, fname: "jane", lname: "doe", email: "jane@aol.com"},
+        {id: 3, fname: "fred", lname: "bear", email: "fred@aol.com"},
+        {id: 4, fname: "ted", lname: "tooy", email: "ted@aol.com"},
       ]}
     );
   }
