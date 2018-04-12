@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AuthorListItem  = (props) =>  {
   return (
@@ -7,15 +8,20 @@ const AuthorListItem  = (props) =>  {
       <td className="col-md-3">{props.lname}</td>
       <td className="col-md-3">{props.email}</td>
       <td className="col-md-3 btn-toolbar">
-        <button className="btn btn-success btn-sm" onClick={event => props.onEdit("edit",props)}>
-          <i className="glyphicon glyphicon-pencil"></i> Edit
+        <Link to={`/authors/${props.id}/posts`}>
+        <button className="btn btn-success btn-sm">
+          <i className="glyphicon glyphicon-list"></i> Posts
         </button>
-        <button className="btn btn-danger btn-sm" onClick={event => props.onDelete(props.id)}>
-          <i className="glyphicon glyphicon-remove"></i> Delete
-        </button>
-      </td>
-    </tr>
-  );
+      </Link>
+      <button className="btn btn-success btn-sm" onClick={event => props.onEdit("edit",props)}>
+        <i className="glyphicon glyphicon-pencil"></i> Edit
+      </button>
+      <button className="btn btn-danger btn-sm" onClick={event => props.onDelete(props.id)}>
+        <i className="glyphicon glyphicon-remove"></i> Delete
+      </button>
+    </td>
+  </tr>
+);
 }
 
 const AuthorList = (props) => {
