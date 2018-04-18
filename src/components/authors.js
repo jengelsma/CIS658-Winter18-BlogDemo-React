@@ -2,7 +2,8 @@ import React from 'react';
 import AuthorForm from './author_form';
 import AuthorList from './author_list';
 import axios from 'axios';
-const API_BASE = "http://localhost:3000/";
+//const API_BASE = "http://localhost:3000/";
+const API_BASE = "https://still-forest-88986.herokuapp.com/";
 
 class Authors extends React.Component {
 
