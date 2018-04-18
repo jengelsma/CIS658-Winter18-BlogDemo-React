@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:3000/';
+//const API_BASE = 'http://localhost:3000/';
+const API_BASE = "https://still-forest-88986.herokuapp.com/";
 
 class PostForm extends React.Component {
 
@@ -27,7 +28,7 @@ class PostForm extends React.Component {
       axios
       .get(`${API_BASE}/authors/${this.state.author_id}/posts/${this.state.post_id}`)
       .then(res => {
-        console.log("post fetched")
+        console.log("post fetched");
         this.setState({
           title: res.data.title,
           article: res.data.article
@@ -38,10 +39,12 @@ class PostForm extends React.Component {
   }
 
   addPost(newPost) {
+    console.log(`posting post with title ${newPost.title}`);
     axios
     .post(`${API_BASE}/authors/${newPost.author_id}/posts`, newPost)
     .then(res => {
       //this.props.history.replace(`/authors/${this.state.author_id}/posts`);
+      console.log('posted!');
       this.props.history.goBack();
     })
     .catch(err => console.log(err));
